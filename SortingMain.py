@@ -65,7 +65,8 @@ for i in range(0, number_elem):
     element = int(input())
     need_sort.append(element)
 
-sortAlgo = int(input("Choose sorting algorithm (1-#): \n 1. Selection Sort \n 2. Merge Sort \n -> "))
+sortAlgo = int(input("Choose sorting algorithm (1-#): \n 1. Selection Sort \n 2. Merge Sort \n "
+                     "3. Insertion Sort \n-> "))
 
 if sortAlgo == 1:
     selection_sort(need_sort, 0, 0)
