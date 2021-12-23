@@ -130,6 +130,3 @@ elif sortAlgo == 5:
 time_end = time.perf_counter_ns()
 
 print('Results: {}'.format(time_end - time_init))
-
-
-
