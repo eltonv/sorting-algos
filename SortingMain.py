@@ -45,6 +45,14 @@ def merge_sort(to_sort):
             k += 1
 
 
+def insertion_sort(to_sort):
+    for i in range(1, len(to_sort) ):
+        j = i
+        while j > 0 and to_sort[j - 1] > to_sort[j]:
+            to_sort[j], to_sort[j - 1] = to_sort[j - 1], to_sort[j]
+            j = j - 1
+
+
 # main
 number_elem = int(input("Enter the amount of numbers to sort -> "))
 if number_elem == 0:
@@ -59,19 +67,25 @@ for i in range(0, number_elem):
 
 sortAlgo = int(input("Choose sorting algorithm (1-#): \n 1. Selection Sort \n 2. Merge Sort \n -> "))
 
-if (sortAlgo == 1):
+if sortAlgo == 1:
     selection_sort(need_sort, 0, 0)
     print("Results:")
     for i in need_sort:
         print(i)
 
 # also print how fast it worked
-elif (sortAlgo == 2):
+elif sortAlgo == 2:
     merge_sort(need_sort)
     print("Results:")
     for i in need_sort:
         print(i)
 
-elif (sortAlgo > 2):
+elif sortAlgo == 3:
+    insertion_sort(need_sort)
+    print("Results:")
+    for i in need_sort:
+        print(i)
+
+elif (sortAlgo > 3):
     print("coming soon!")
     sortAlgo = int(input("Choose sorting algorithm (1-#): \n 1. Selection Sort \n -> "))
