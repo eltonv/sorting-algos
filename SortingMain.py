@@ -52,6 +52,11 @@ def insertion_sort(to_sort):
             to_sort[j], to_sort[j - 1] = to_sort[j - 1], to_sort[j]
             j = j - 1
 
+def bubble_sort(to_sort):
+    for i in range(1, len(to_sort)):
+        for j in range(0, len(to_sort) - 1):
+            if to_sort[j] > to_sort[j+1]:
+                to_sort[j], to_sort[j+1] = to_sort[j+1], to_sort[j]
 
 # main
 number_elem = int(input("Enter the amount of numbers to sort -> "))
@@ -66,7 +71,7 @@ for i in range(0, number_elem):
     need_sort.append(element)
 
 sortAlgo = int(input("Choose sorting algorithm (1-#): \n 1. Selection Sort \n 2. Merge Sort \n "
-                     "3. Insertion Sort \n-> "))
+                     "3. Insertion Sort \n 4. Bubble Sort \n -> "))
 
 if sortAlgo == 1:
     selection_sort(need_sort, 0, 0)
@@ -87,6 +92,13 @@ elif sortAlgo == 3:
     for i in need_sort:
         print(i)
 
-elif (sortAlgo > 3):
+elif sortAlgo == 4:
+    bubble_sort(need_sort)
+    print("Results:")
+    for i in need_sort:
+        print(i)
+
+elif (sortAlgo > 4):
     print("coming soon!")
-    sortAlgo = int(input("Choose sorting algorithm (1-#): \n 1. Selection Sort \n -> "))
+    sortAlgo = int(input("Choose sorting algorithm (1-#): \n 1. Selection Sort \n 2. Merge Sort \n "
+                     "3. Insertion Sort \n 4. Bubble Sort \n-> "))
